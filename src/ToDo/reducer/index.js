@@ -29,7 +29,7 @@ const initialState = {
 };
 
 export function todoListReducer(state = initialState, action = {}) {
-  console.log(action.payload);
+  console.log(action.payload); // tech console
 
   switch (action.type)  {
     

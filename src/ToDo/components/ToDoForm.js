@@ -10,13 +10,15 @@ export function ToDoForm({ onAddItem }) {
   const addItemHandler = (e) => {
     e.preventDefault();
     
-    if(!title) {
+    if(!title.trim()) {
       setTitleError(true);
+      setTitle('');
       return;
     }
 
-    if(!description) {
+    if(!description.trim()) {
       setDescriptionError(true);
+      setDescription('');
       return;
     }
 
