@@ -1,4 +1,5 @@
 import { createStore } from 'redux';
+import { actionAddItem, actionChangeItemStatus } from '../../ToDo/actions';
 
 const initialState = {
   activeItem: null,
@@ -25,7 +26,43 @@ const initialState = {
 };
 
 function rootReducer(state = initialState, action = {}) {
-  return state;
+  console.log(action.payload);
+
+  switch (action.type)  {
+    
+    case actionAddItem.TYPE:
+      const getMaxId = (id) =>  {
+        return Math.max.apply(null, id);
+      }
+
+      const lastItemId = getMaxId(state.toDoList.map(item => item.id));
+      const newId = lastItemId + 1;
+    
+      const newItem = {
+        id: newId,
+        title: action.payload.title,
+        description: action.payload.description,
+        status: false,
+      };
+    
+      return {
+        ...state,
+        toDoList: [...state.toDoList, newItem],
+      };
+
+    case actionChangeItemStatus.TYPE:
+      return { 
+        ...state, 
+        toDoList: state.toDoList.map(item => (
+          item.id === action.payload
+            ? {...item, status: !item.status}
+            : item
+        ))
+      };
+    
+    default:
+      return state;
+    }
 }
 
 export const store = createStore(rootReducer);

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function ToDoForm() {
+export function ToDoForm({ onAddItem }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
@@ -19,6 +19,8 @@ export function ToDoForm() {
       setDescriptionError(true);
       return;
     }
+
+    onAddItem({ title, description });
 
     setTitle('');
     setDescription('');

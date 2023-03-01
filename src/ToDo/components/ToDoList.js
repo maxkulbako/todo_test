@@ -1,6 +1,6 @@
 import { ToDoItem } from './ToDoItem';
 
-export function ToDoList({ itemsList }) {
+export function ToDoList({ itemsList, onChangeStatus }) {
   return (
     <div className="todo_list_wrapper">
       <div className="todo_list_title">
@@ -17,6 +17,8 @@ export function ToDoList({ itemsList }) {
             title={title}
             description={description}
             status={status}
+            onChangeStatus={onChangeStatus}
+            onClick={(e) => e.stopPropagination()}
           />
         ))
       }
