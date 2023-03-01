@@ -1,0 +1,24 @@
+.todo_item_wrapper {
+  display: grid;
+  grid-template-columns: 100px 200px 400px 100px;
+  text-align: center;
+  background-color: rgb(169, 169, 167);
+  margin: 20px 0;
+  cursor: pointer;
+
+  p {
+      padding: 0 10px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    
+    }
+  
+  input {
+    width: 24px;
+    height: 24px;
+    align-self: center;
+    justify-self: center;
+  }
+}
+

@@ -4,6 +4,41 @@ form {
   gap: 30px;
 }
 
+.todo_item_wrapper {
+  display: grid;
+  grid-template-columns: 100px 200px 400px 100px;
+  text-align: center;
+  background-color: rgb(169, 169, 167);
+  margin: 20px 0;
+  cursor: pointer;
+}
+.todo_item_wrapper p {
+  padding: 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.todo_item_wrapper input {
+  width: 24px;
+  height: 24px;
+  align-self: center;
+  justify-self: center;
+}
+
+.todo_list_title {
+  display: grid;
+  grid-template-columns: 100px 200px 400px 100px;
+  text-align: center;
+  background-color: rgb(205, 205, 199);
+  margin-bottom: 20px;
+}
+.todo_list_title p {
+  border-right: 1px solid #000;
+}
+.todo_list_title p:last-child {
+  border: none;
+}
+
 .App {
   max-width: 800px;
   margin: 50px auto;

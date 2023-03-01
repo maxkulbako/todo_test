@@ -1,5 +1,10 @@
 export function ToDoItem() {
   return (
-    <div>ToDoItem</div>
+    <div className="todo_item_wrapper">
+        <p>ID</p>
+        <p>TITLE</p>
+        <p>DESCRIPTION</p>
+        <input type="checkbox" />
+    </div>
   );
 }
