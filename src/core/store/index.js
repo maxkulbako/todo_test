@@ -1,5 +1,9 @@
 import { createStore } from 'redux';
-import { actionAddItem, actionChangeItemStatus } from '../../ToDo/actions';
+import { 
+  actionAddItem,
+  actionChangeItemStatus,
+  actionSelectActiveItem
+} from '../../ToDo/actions';
 
 const initialState = {
   activeItem: null,
@@ -7,19 +11,19 @@ const initialState = {
     {
       id: 1,
       title: 'Make sth',
-      description: "alskdlakjsdklajsdlkajd",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, blanditiis qui deserunt nulla sapiente saepe nobis? Aperiam voluptatem cupiditate vel quo, aliquam veritatis nihil quaerat quibusdam quasi modi tempore ad.",
       status: true,
     },
     {
       id: 2,
       title: 'Make sth',
-      description: 'alskdlakjsdklajsdlkajd',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, blanditiis qui deserunt nulla sapiente saepe nobis? Aperiam voluptatem cupiditate vel quo, aliquam veritatis nihil quaerat quibusdam quasi modi tempore ad.',
       status: false,
     },
     {
       id: 3,
       title: 'Make sth',
-      description: 'alskdlakjsdklajsdlkajd',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, blanditiis qui deserunt nulla sapiente saepe nobis? Aperiam voluptatem cupiditate vel quo, aliquam veritatis nihil quaerat quibusdam quasi modi tempore ad.',
       status: false,
     },
   ],
@@ -60,6 +64,13 @@ function rootReducer(state = initialState, action = {}) {
         ))
       };
     
+    case   actionSelectActiveItem.TYPE:
+      return {
+        ...state,
+        activeItem: action.payload
+      }
+    
+
     default:
       return state;
     }

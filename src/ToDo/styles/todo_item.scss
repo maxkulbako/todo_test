@@ -14,11 +14,62 @@
     
     }
   
+  span {
+    display: none;
+  }
+
+  .todo_input_wrapper {
+    display: grid;
+  }
+
   input {
     width: 24px;
     height: 24px;
     align-self: center;
     justify-self: center;
+  }
+}
+
+.modal_wrapper {
+  .todo_item_wrapper {
+    display: flex;
+    flex-direction: column;
+    background: none;
+    pointer-events: none;
+
+    p {
+      white-space: unset;
+      padding: 0;
+    }
+
+    span {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .todo_item_id {
+      display: none;
+    }
+
+    .todo_item_title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .todo_item_description {
+      text-align: justify;
+    }
+
+    .todo_input_wrapper {
+      justify-content: start;
+      padding: 20px 0;
+    }
+
+    .todo_item_input {
+      pointer-events: all;
+      margin: 20px 0;
+    }
   }
 }
 

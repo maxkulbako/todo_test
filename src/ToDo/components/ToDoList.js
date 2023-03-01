@@ -1,6 +1,11 @@
 import { ToDoItem } from './ToDoItem';
 
-export function ToDoList({ itemsList, onChangeStatus }) {
+export function ToDoList({
+  itemsList,
+  onChangeStatus,
+  selectActiveItem,
+  setActiveModal
+}) {
   return (
     <div className="todo_list_wrapper">
       <div className="todo_list_title">
@@ -18,7 +23,8 @@ export function ToDoList({ itemsList, onChangeStatus }) {
             description={description}
             status={status}
             onChangeStatus={onChangeStatus}
-            onClick={(e) => e.stopPropagination()}
+            selectActiveItem={selectActiveItem}
+            setActiveModal={setActiveModal}
           />
         ))
       }

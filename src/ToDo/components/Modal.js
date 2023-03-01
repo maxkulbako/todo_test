@@ -1,4 +1,4 @@
-export function Modal({ isActive, setActiveModal }) {
+export function Modal({ isActive, setActiveModal, children }) {
 
   return (
     <div
@@ -6,9 +6,14 @@ export function Modal({ isActive, setActiveModal }) {
     >
       <div className="modal_content">
         <button
+        className="modal_close_btn"
+        onClick={() => setActiveModal(false)}
         >
           close
         </button>
+        <div>
+          {children}
+        </div>
       </div>
     </div>
   );
