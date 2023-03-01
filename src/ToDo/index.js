@@ -1,11 +1,18 @@
 import { connect } from 'react-redux';
-import { ToDoForm, ToDoList } from './components';
+import { useState } from 'react';
+import { ToDoForm, ToDoList, Modal } from './components';
 import { selectorToDoList } from './selectors';
 import { actionAddItem, actionChangeItemStatus } from './actions';
 
 function ToDoView({ toDoList, addItem, changeItemStatus }) {
+  const [activeModal, setActiveMOdal] = useState(true);
+
   return (
     <div className="todo_list_container">
+      <Modal
+        isActive={activeModal}
+        setActiveModal={setActiveMOdal}
+      />
       <ToDoForm onAddItem={addItem} />
       <ToDoList
         itemsList={toDoList}
