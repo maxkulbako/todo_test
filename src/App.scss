@@ -1,0 +1,8 @@
+@import './ToDo/styles/todo_form.scss';
+@import './ToDo/styles/todo_item.scss';
+@import './ToDo/styles/todo_list.scss';
+
+.App {
+  max-width: 800px;
+  margin: 50px auto;
+}
