@@ -4,6 +4,15 @@ form {
   gap: 30px;
 }
 
+.form_input_wrapper {
+  position: relative;
+}
+.form_input_wrapper p {
+  font-size: 12px;
+  position: absolute;
+  top: -37px;
+}
+
 .todo_item_wrapper {
   display: grid;
   grid-template-columns: 100px 200px 400px 100px;

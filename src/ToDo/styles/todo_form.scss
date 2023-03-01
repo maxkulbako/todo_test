@@ -3,3 +3,13 @@ form {
   display: flex;
   gap: 30px
 }
+
+.form_input_wrapper {
+  position: relative;
+
+  p {
+    font-size: 12px;
+    position: absolute;
+    top: -37px;
+  }
+}
